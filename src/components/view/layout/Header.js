@@ -1,4 +1,4 @@
-import React, {useContext, useEffect} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import {NavLink} from "react-router-dom";
 import Logo from "../../littleComponents/svg/Logo";
 import Currency from "../../littleComponents/svg/Currency";
@@ -9,9 +9,7 @@ import {Context} from "../../reducers/store";
 const Header = () => {
     const { t, i18n } = useTranslation();
     const [state, dispatch] = useContext(Context);
-    useEffect(() => {
-        console.log(state.currency);
-    }, [state])
+    const [isAuthScreen, setAuthScreen] = useState(false);
     const onChangeLanguage = () => {
         i18n.language === "ru" ? i18n.changeLanguage("en") : i18n.changeLanguage("ru")
     }
@@ -42,7 +40,6 @@ const Header = () => {
         link: {
             color: COLORS.Black,
             textDecoration: "none",
-            fontSize: ".88em"
         }
     }
     return (
@@ -52,7 +49,9 @@ const Header = () => {
                     <Logo/>
                 </div>
                 <div style={styles.rightBlock}>
-                    <NavLink style={{marginRight: "1vw", ...styles.link}} to="/login">{t('login')}</NavLink>
+                    <button style={styles.button} onClick={() => setAuthScreen(true)} onBlur={() => setAuthScreen(false)}>
+                        <p style={{marginRight: "1vw", fontFamily: "Montserrat", fontWeight: "500", ...styles.link}} >{t('login')}</p>
+                    </button>
                     <p style={{marginLeft: "1vw", fontSize: ".88em"}}>{t('language')}</p>
                     <button onClick={onChangeLanguage} style={{marginLeft: "0.5vw", fontWeight: 600, ...styles.button}}>RU/EN</button>
                     <button onClick={() => onChangeCurrency("rub")} style={{marginLeft: "0.5vw", ...styles.button}}>

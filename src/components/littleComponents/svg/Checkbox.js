@@ -9,14 +9,14 @@ const Checkbox = props => {
                     <path d="M3.5 6.79704L5.83333 9.13037L11.0833 3.88037" stroke="white"/>
                     <rect x="0.5" y="0.880371" width="13" height="13" rx="1.5" stroke="#0572BA"/>
                 </svg>
-                <p style={{marginLeft: "0.5vw"}}>{props.text}</p>
+                <p style={{marginLeft: "0.5vw", fontFamily: "Montserrat", fontWeight: "500"}}>{props.text}</p>
             </div>
             :
             <div style={{display: "flex", alignItems: "center"}}>
                 <svg width="14" height="16" viewBox="0 0 14 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <rect x="0.5" y="1.5" width="13" height="13" rx="1.5" stroke="#0572BA"/>
                 </svg>
-                <p style={{marginLeft: "0.5vw"}}>{props.text}</p>
+                <p style={{marginLeft: "0.5vw", fontFamily: "Montserrat", fontWeight: "500"}}>{props.text}</p>
             </div>
     );
 };

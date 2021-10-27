@@ -17,7 +17,8 @@ const MyButton = props => {
             cursor: "pointer",
             gridArea: props.gridArea,
             gridColumn: props.gridColumn,
-            gridRow: props.gridRow
+            gridRow: props.gridRow,
+            marginTop: props.marginTop
         }
     }
     return (

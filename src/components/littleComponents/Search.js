@@ -17,7 +17,8 @@ const Search = props => {
             width: props.width,
             gridArea: props.gridArea,
             gridColumn: props.gridColumn,
-            gridRow: props.gridRow
+            gridRow: props.gridRow,
+            marginTop: props.marginTop
         }
     }
     return (
